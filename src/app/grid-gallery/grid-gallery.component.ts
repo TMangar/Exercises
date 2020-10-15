@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {GalleryModelService} from "../services/gallery-model.service";
+import {ImageModel} from "../models/imageModel";
 
 @Component({
   selector: 'app-grid-gallery',
@@ -7,16 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridGalleryComponent implements OnInit {
 
-  constructor() { }
-  public modalImageSource:string;
+  constructor(private galleryService: GalleryModelService) { }
+  @Input() galleryModels:ImageModel[];
+  public modalImageSource:ImageModel;
   public showModal:boolean;
 
   ngOnInit(): void {
+    this.galleryModels = this.galleryService.GetImageModels()
   }
 
-  openModal(source:string){
+  openModal(source:ImageModel){
     this.modalImageSource = source;
     this.showModal = true;
+    console.log(this.modalImageSource)
   }
 
   closeModal(){

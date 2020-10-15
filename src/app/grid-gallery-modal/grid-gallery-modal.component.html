@@ -1,10 +1,13 @@
 <div class="modal-display">
-  <div class="modal-close-button-container">
-    <button class="modal-close-button" (click)="close()">
-      Close
-    </button>
+  <div class="modal-content-container">
+    <div class="modal-close-button-container">
+      <button class="modal-close-button" (click)="close()">
+        Close
+      </button>
+    </div>
+    <img src="{{this.imageSource.source}}"/>
+    <div class="modal-image-description">{{this.imageSource.description}}</div>
   </div>
-  <img src="{{imageSource}}"/>
 </div>
 <div class="overlay" (click)="close()">
 </div>

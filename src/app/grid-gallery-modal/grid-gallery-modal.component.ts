@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ImageModel} from "../models/imageModel";
 
 @Component({
   selector: 'app-grid-gallery-modal',
@@ -6,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./grid-gallery-modal.component.css']
 })
 export class GridGalleryModalComponent implements OnInit {
-  @Input() imageSource: string;
+  @Input() imageSource: ImageModel;
   @Output() closeModal = new EventEmitter();
 
   constructor() { }

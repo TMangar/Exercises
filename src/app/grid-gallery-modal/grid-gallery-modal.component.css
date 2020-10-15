@@ -12,10 +12,14 @@
   flex-direction: column;
 }
 
+.modal-close-button-container {
+  position: relative;
+}
+
 .modal-display img {
   max-width: 800px;
   max-height: 780px;
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 .modal-close-button {
@@ -38,6 +42,19 @@
   margin-bottom: 5px;
 }
 
+.modal-image-description {
+  background-color: #aaaaaaaa;
+  min-width: 200px;
+  position: absolute;
+  bottom: 40px;
+  min-height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Commissioner, serif;
+}
+
 .overlay{
   content: '';
   position: fixed;
@@ -47,4 +64,9 @@
   right: 0;
   background-color: rgba(0,0,0,0.5);
   z-index: 9;
+}
+
+@font-face {
+  font-family: 'Commissioner'; /*a name to be used later*/
+  src: url('src/assets/Commissioner-VariableFont_wght.ttf'); /*URL to font*/
 }

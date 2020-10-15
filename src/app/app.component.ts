@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ImageModel} from "./models/imageModel";
+import {GalleryModelService} from "./services/gallery-model.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'grid-gallery-modal';
+  public galleryModels: ImageModel[];
+  constructor(private galleryService: GalleryModelService) {
+  }
+
+  ngOnInit(){
+    this.galleryModels = this.galleryService.GetImageModels()
+  }
 }

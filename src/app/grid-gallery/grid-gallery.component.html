@@ -1,21 +1,5 @@
 <body>
-  <app-grid-gallery-image class="tall" imageSource="https://source.unsplash.com/NRz7SfpnqUM" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/KrNuV_xJJWI" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/Wm4vaMmHwS0" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/CN_42yx-2Xo" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image class="wide" imageSource="https://source.unsplash.com/FHHpOkaX_cQ" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/DlkF4-dbCOU" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/0LU4vO5iFpM" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/in9-n0JwgZ0" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/mtu6m_nLFQI" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/qnjKufYqIIE" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/5eYdj1ZTOlc" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/G0miZ5OYaXI" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/XAxEp-NKBiQ" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/GZd3l4Yxdxs" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/46dgbaKZTjk" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/1ZOyYPOBn7I" (openModal)="openModal($event)"></app-grid-gallery-image>
-  <app-grid-gallery-image imageSource="https://source.unsplash.com/0qDTbpVdecE" (openModal)="openModal($event)"></app-grid-gallery-image>
+  <app-grid-gallery-image *ngFor="let model of galleryModels" [imageSource]="model" (openModal)="openModal($event)"></app-grid-gallery-image>
 </body>
 
-<app-grid-gallery-modal imageSource="{{modalImageSource}}" *ngIf="showModal" (closeModal)="closeModal()"></app-grid-gallery-modal>
+<app-grid-gallery-modal [imageSource]="modalImageSource" *ngIf="showModal" (closeModal)="closeModal()"></app-grid-gallery-modal>
